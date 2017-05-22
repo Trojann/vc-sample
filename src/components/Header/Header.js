@@ -1,29 +1,25 @@
 import React, { Component } from 'react'
-import { Dropdown, DropdownMenu, DropdownItem } from 'reactstrap'
+// import { Dropdown, DropdownMenu, DropdownItem } from 'reactstrap'
 
 class Header extends Component {
-  constructor(props) {
+  /*constructor(props) {
     super(props);
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      dropdownOpen: false
-    };
-  }
+    this.toggleProfile = this.toggleProfile.bind(this);
+  }*/
 
-  toggle(e) {
-    e.preventDefault();
-    this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    });
-  }
+  // toggleProfile(e) {
+  //   e.preventDefault();
+  //   var {dispatch} = this.props
+  //   dispatch({ type: 'TOGGLE_PROFILE'})
+  // }
 
   sidebarToggle(e) {
     e.preventDefault();
     document.body.classList.toggle('sidebar-hidden');
   }
 
-  sidebarMinimize(e) {
+ /* sidebarMinimize(e) {
     e.preventDefault();
     document.body.classList.toggle('sidebar-minimized');
   }
@@ -36,7 +32,7 @@ class Header extends Component {
   asideToggle(e) {
     e.preventDefault();
     document.body.classList.toggle('aside-menu-hidden');
-  }
+  }*/
 
   render() {
     return (
@@ -59,32 +55,14 @@ class Header extends Component {
             <a className="nav-link" href="#"><i className="icon-location-pin"></i></a>
           </li>
           <li className="nav-item">
-            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-              <a onClick={this.toggle} className="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded={this.state.dropdownOpen}>
-                <img src={'img/avatars/6.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com"/>
-                <span className="d-md-down-none">admin</span>
-              </a>
+            <a onClick={this.toggle} className="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="" role="button" aria-haspopup="true">
+              <img src={'img/avatars/6.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com" />
+              <span className="d-md-down-none">admin</span>
+            </a>
 
-              <DropdownMenu className="dropdown-menu-right">
-                <DropdownItem header className="text-center"><strong>Account</strong></DropdownItem>
-
-                <DropdownItem><i className="fa fa-bell-o"></i> Updates<span className="badge badge-info">42</span></DropdownItem>
-                <DropdownItem><i className="fa fa-envelope-o"></i> Messages<span className="badge badge-success">42</span></DropdownItem>
-                <DropdownItem><i className="fa fa-tasks"></i> Tasks<span className="badge badge-danger">42</span></DropdownItem>
-                <DropdownItem><i className="fa fa-comments"></i> Comments<span className="badge badge-warning">42</span></DropdownItem>
-
-                <DropdownItem header className="text-center"><strong>Settings</strong></DropdownItem>
-
-                <DropdownItem><i className="fa fa-user"></i> Profile</DropdownItem>
-                <DropdownItem><i className="fa fa-wrench"></i> Settings</DropdownItem>
-                <DropdownItem><i className="fa fa-usd"></i> Payments<span className="badge badge-default">42</span></DropdownItem>
-                <DropdownItem><i className="fa fa-file"></i> Projects<span className="badge badge-primary">42</span></DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem><i className="fa fa-shield"></i> Lock Account</DropdownItem>
-                <DropdownItem><i className="fa fa-lock"></i> Logout</DropdownItem>
-
-              </DropdownMenu>
-            </Dropdown>
+            <span className="dropdown-menu-right">
+            USER PROFILE
+            </span>
           </li>
           <li className="nav-item d-md-down-none">
             <a className="nav-link navbar-toggler aside-menu-toggler" onClick={this.asideToggle} href="#">&#9776;</a>
